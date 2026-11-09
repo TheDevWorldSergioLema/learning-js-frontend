@@ -1,0 +1,72 @@
+// Instruction-booklet palette: pale blue-gray pages, white panels, toy-brick accents.
+$color-paper: #e6ecf2;
+$color-panel: #ffffff;
+$color-panel-sunk: #f3f6f9;
+$color-line: #cdd6e0;
+$color-ink: #1b2838;
+$color-ink-soft: #46576b;
+$color-ink-faint: #7a8899;
+$color-ink-muted: #5b6b80;
+$color-ink-inverse-soft: #c4cfdb;
+$color-white: #ffffff;
+
+$color-yellow: #f6c90e;
+$color-yellow-light: #ffe064;
+$color-yellow-deep: #c99f00;
+$color-red: #c8102e;
+$color-blue: #0b5cad;
+$color-green: #1f7a3d;
+$color-green-soft: #e3f3e8;
+$color-green-line: #a9d8b8;
+$color-amber-soft: #fff4d1;
+$color-amber-line: #ecd78a;
+$color-error: #8c0b20;
+
+// Same as the body of the preview page (src/utils/page.js), so the frame blends in.
+$color-preview-background: #f3f5f8;
+
+// The console panel is dark, like a terminal.
+$color-console-line: rgba(255, 255, 255, 0.08);
+$color-console-code: rgba(255, 255, 255, 0.1);
+$color-console-error: #ff9aa8;
+
+$color-shade-light: rgba(0, 0, 0, 0.15);
+$color-shade: rgba(0, 0, 0, 0.18);
+$color-shade-strong: rgba(0, 0, 0, 0.22);
+$color-shine: rgba(255, 255, 255, 0.35);
+$color-glow: rgba(255, 255, 255, 0.25);
+$color-active-line: rgba($color-blue, 0.06);
+
+$spacing-1: 2px;
+$spacing-2: 4px;
+$spacing-3: 6px;
+$spacing-4: 8px;
+$spacing-5: 10px;
+$spacing-6: 12px;
+$spacing-7: 14px;
+$spacing-8: 16px;
+$spacing-10: 20px;
+$spacing-11: 22px;
+$spacing-12: 24px;
+
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 10px;
+$radius-pill: 999px;
+
+$border-width: 1px;
+$border-width-thick: 2px;
+$border-width-accent: 4px;
+$focus-ring-width: 3px;
+
+$shadow-panel: 0 1px 0 rgba($color-ink, 0.06), 0 6px 18px rgba($color-ink, 0.07);
+$shadow-brick: inset 0 -3px 0 $color-shade-light;
+
+$stud: 20px;
+
+$transition-fast: 0.15s;
+
+$breakpoint-desktop: 1000px;
+$breakpoint-phone: 560px;

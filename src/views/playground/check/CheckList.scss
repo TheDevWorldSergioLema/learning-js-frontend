@@ -1,0 +1,154 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+$mark-size: 18px;
+$solved-stud-size: 18px;
+
+.check {
+  @include panel;
+  padding: $spacing-8 18px;
+
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: $spacing-2 $spacing-6;
+    font-size: $font-size-heading;
+    margin-bottom: $spacing-5;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-height: 34vh;
+    overflow-y: auto;
+  }
+}
+
+.check-count {
+  font-family: $font-body;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  color: $color-ink-soft;
+}
+
+.check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+
+  li {
+    display: grid;
+    grid-template-columns: $mark-size 1fr;
+    align-items: start;
+    gap: $spacing-5;
+    padding: 7px 0;
+    border-top: $border-width solid $color-panel-sunk;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.check-mark {
+  display: grid;
+  place-items: center;
+  width: $mark-size;
+  height: $mark-size;
+  margin-top: $spacing-1;
+  border-radius: 50%;
+  border: $border-width-thick solid $color-line;
+  font-size: $font-size-xxs;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+
+  .is-pass & {
+    border-color: $color-green;
+    background: $color-green;
+    color: $color-white;
+
+    &::before {
+      content: '✓';
+    }
+  }
+
+  .is-error & {
+    border-color: $color-error;
+    color: $color-error;
+
+    &::before {
+      content: '!';
+    }
+  }
+}
+
+.check-text {
+  display: grid;
+  gap: $spacing-1;
+
+  .is-pass & {
+    color: $color-ink-soft;
+  }
+}
+
+.check-error {
+  @include code($font-size-xxs);
+  color: $color-error;
+}
+
+.check-solved {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-8 $spacing-10;
+  background: $color-green-soft;
+  border-color: $color-green-line;
+
+  h2 {
+    color: $color-green;
+    margin-bottom: $spacing-2;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.solved-text {
+  flex: 1;
+  min-width: 14rem;
+}
+
+// The one celebratory moment: four studs snap on, one after another.
+.solved-studs {
+  display: grid;
+  grid-template-columns: repeat(2, $solved-stud-size);
+  gap: $spacing-2;
+  padding: $spacing-3;
+  border-radius: $radius-sm;
+  background: $color-yellow;
+  box-shadow: $shadow-brick;
+
+  i {
+    width: $solved-stud-size;
+    height: $solved-stud-size;
+    border-radius: 50%;
+    background: $color-yellow-light;
+    box-shadow: 0 $spacing-1 0 $color-yellow-deep;
+    animation: snap 0.32s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+
+    @for $i from 2 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.08s * ($i - 1);
+      }
+    }
+  }
+}
+
+@keyframes snap {
+  from {
+    transform: translateY(-10px) scale(0.6);
+    opacity: 0;
+  }
+}

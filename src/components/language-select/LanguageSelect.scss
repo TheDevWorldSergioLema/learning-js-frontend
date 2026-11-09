@@ -1,0 +1,52 @@
+@use 'config' as *;
+@use 'typography' as *;
+
+.language-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  color: $color-ink-inverse-soft;
+
+  select {
+    appearance: none;
+    font: inherit;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-white;
+    background: transparent;
+    border: $border-width-thick solid $color-ink-muted;
+    border-radius: $radius-pill;
+    padding: $spacing-3 ($spacing-11 + $spacing-2) $spacing-3 ($spacing-12 + $spacing-4);
+    cursor: pointer;
+    transition: border-color $transition-fast;
+
+    &:hover {
+      border-color: $color-ink-inverse-soft;
+    }
+
+    &:focus-visible {
+      outline-color: $color-yellow;
+    }
+  }
+
+  option {
+    color: $color-ink;
+    background: $color-panel;
+  }
+}
+
+.language-icon,
+.language-chevron {
+  position: absolute;
+  pointer-events: none;
+}
+
+.language-icon {
+  left: $spacing-5;
+}
+
+.language-chevron {
+  right: $spacing-5;
+}

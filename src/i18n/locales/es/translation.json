@@ -1,0 +1,546 @@
+{
+  "app": {
+    "name": "La tienda de bloques",
+    "title": "La tienda de bloques: aprende JavaScript y el DOM",
+    "description": "Aprende JavaScript haciendo funcionar una tienda de bloques: variables, condiciones, bucles, funciones, arrays, el DOM, eventos, localStorage y formularios en 20 pasos guiados."
+  },
+  "language": {
+    "label": "Idioma",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "letChanges": "let puede cambiar, const no",
+    "nameYourShop": "Dale un nombre y una ciudad a tu tienda",
+    "typeofHint": "Abre la consola de abajo: ¿de qué tipo son?",
+    "summaryGoal": "Muestra: 4 × Red brick = 2 €",
+    "soldOutRule": "Sold out cuando el stock es 0, In stock en otro caso",
+    "almostGoneRule": "Añade un caso: Almost gone por debajo de 5",
+    "byId": "el elemento con id=\"cart\"",
+    "firstOfClass": "el primer elemento con class=\"card\"",
+    "inside": "un h2 dentro de una .card",
+    "fillFeatured": "Rellena el nombre y el precio de la tarjeta destacada",
+    "showBanner": "Muestra el banner: quítale la clase hidden",
+    "highlightCard": "Añade la clase highlight a la tarjeta amarilla",
+    "toggleFlip": "la añade si falta, la quita si está",
+    "toggleForce": "la añade si isOpen es true, la quita si es false",
+    "toggleRule": "La tarjeta es sold-out cuando el stock es 0, y solo entonces",
+    "countdownLoop": "Añade 5 4 3 2 1 a text con un bucle",
+    "addEveryPrice": "Suma cada precio al total",
+    "searchInside": "busca solo dentro de esta tarjeta",
+    "markIfEmpty": "Añade la clase sold-out cuando el stock es 0",
+    "formatPriceRule": "formatPrice(2) debe devolver '2.00 €'",
+    "stockLabelRule": "Sold out en 0, Almost gone por debajo de 5, In stock en otro caso",
+    "mapNames": "El nombre de cada bloque",
+    "mapPrices": "El precio de cada bloque, seguido de ' €'",
+    "filterRed": "Solo los bloques rojos",
+    "filterInStock": "Solo los bloques cuyo stock es mayor que 0",
+    "findByName": "El bloque cuyo nombre es wanted",
+    "onClick": "En cada clic: suma 1 a count y muéstralo",
+    "addsOrRemoves": "añade o quita la clase",
+    "toggleTheme": "Al hacer clic: alterna la clase dark de document.body y actualiza el texto",
+    "readSavedTheme": "Si el tema guardado es dark, empieza en modo oscuro",
+    "saveTheme": "Guarda el tema: localStorage.setItem(...)",
+    "noReload": "quédate en la página",
+    "preventReload": "1. Evita que la página se recargue",
+    "readForm": "2. Lee los campos con new FormData(form)"
+  },
+  "steps": {
+    "label": "Pasos",
+    "step": "Paso {{number}}: {{title}}",
+    "stepDone": "Paso {{number}}: {{title}}, hecho",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Paso {{step}} de {{total}}",
+    "goal": "Tu objetivo: ",
+    "firstHint": "¿Necesitas una pista?",
+    "nextHint": "Otra pista",
+    "hintCount": "{{current}} de {{total}}",
+    "showSolution": "Enséñame la solución",
+    "confirmLabel": "¿Reemplazar tu código por la solución?",
+    "confirmText": "Tu código se reemplazará por la solución.",
+    "replaceCode": "Reemplazar mi código",
+    "keepTrying": "Sigo intentándolo",
+    "definition": "Definición"
+  },
+  "editor": {
+    "label": "Editor de código",
+    "files": "Archivo",
+    "tabs": {
+      "js": "script.js",
+      "html": "index.html"
+    },
+    "code": {
+      "js": "Código JavaScript",
+      "html": "Código HTML"
+    },
+    "startOver": "Empezar de nuevo",
+    "run": "Ejecutar",
+    "runShortcut": "Ejecutar el código (Ctrl+Intro)",
+    "htmlFixed": "La página es fija en cada paso: léela para saber qué seleccionar, y escribe tu código en <strong>script.js</strong>."
+  },
+  "preview": {
+    "label": "Vista previa",
+    "address": "shop://paso-{{step}}/index.html",
+    "page": "Tu página",
+    "probe": "Página usada por las comprobaciones"
+  },
+  "console": {
+    "title": "Consola",
+    "empty": "Todavía no hay nada. Prueba `console.log('hello')` en tu código.",
+    "storage": "localStorage",
+    "clearStorage": "Vaciar y volver a ejecutar",
+    "notices": {
+      "formReload": "El formulario se envió y la página se recargó: tu código volvió a ejecutarse desde el principio. Llama a `event.preventDefault()` en el listener de submit para quedarte en la página."
+    }
+  },
+  "errors": {
+    "syntax": "Error de sintaxis: {{message}}",
+    "runtime": "{{name}}: {{message}}",
+    "infiniteLoop": "Este bucle nunca termina: se detuvo después de {{count}} vueltas. Revisa su condición.",
+    "atLine": "{{error}} (línea {{line}})"
+  },
+  "check": {
+    "title": "Comprobaciones",
+    "count_one": "{{passed}} de {{count}} comprobación superada",
+    "count_other": "{{passed}} de {{count}} comprobaciones superadas",
+    "status": {
+      "pass": "superada",
+      "fail": "todavía no",
+      "error": "el código falló"
+    },
+    "solved": "¡Paso completado!",
+    "finished": "¡Has terminado todos los pasos!",
+    "nextStep": "Siguiente paso"
+  },
+  "concepts": {
+    "variables": {
+      "name": "variables",
+      "definition": "Una caja con nombre que guarda un valor. `const` crea una que nunca recibe otro valor, `let` una que puede cambiar después: `let count = 0` y luego `count = count + 1`."
+    },
+    "types": {
+      "name": "tipos",
+      "definition": "Cada valor tiene un tipo: `number` (12, 0.5), `string` (texto entre comillas, '12'), `boolean` (true, false), y otros. `typeof` te dice cuál. Con un string, `+` pega texto en vez de sumar números."
+    },
+    "conditions": {
+      "name": "if / else",
+      "definition": "`if (condition) { … } else { … }` ejecuta el primer bloque cuando la condición es verdadera, y el segundo en otro caso. Se compara con `===`, `!==`, `<`, `>`, `<=`, `>=`."
+    },
+    "querySelector": {
+      "name": "querySelector",
+      "definition": "`document.querySelector(selector)` devuelve el primer elemento que coincide con un selector CSS (`#id`, `.class`, `.card .name`), o `null`. Su `textContent` es el texto que contiene: puedes leerlo o darle un valor nuevo."
+    },
+    "classList": {
+      "name": "classList",
+      "definition": "La lista de clases de un elemento. `add`, `remove` y `toggle` la cambian, `contains` dice si una clase está. El CSS de la página da su aspecto a cada clase."
+    },
+    "loops": {
+      "name": "for",
+      "definition": "`for (let i = 0; i < 3; i++) { … }` ejecuta el bloque una y otra vez: un inicio, una condición comprobada antes de cada vuelta y un paso después de cada vuelta."
+    },
+    "querySelectorAll": {
+      "name": "querySelectorAll",
+      "definition": "`document.querySelectorAll(selector)` devuelve todos los elementos que coinciden con el selector, en el orden de la página. Se recorren con `for (const el of list) { … }`; `list.length` los cuenta."
+    },
+    "functions": {
+      "name": "function",
+      "definition": "Un trozo de código con nombre que puedes llamar una y otra vez. Recibe valores como parámetros y devuelve uno con `return`: `function double(n) { return n * 2 }`."
+    },
+    "map": {
+      "name": "map",
+      "definition": "`array.map((item) => …)` crea un array nuevo de la misma longitud, con lo que la función devuelve para cada elemento. El array original no cambia."
+    },
+    "filter": {
+      "name": "filter",
+      "definition": "`array.filter((item) => …)` crea un array nuevo solo con los elementos para los que la función devuelve true."
+    },
+    "find": {
+      "name": "find",
+      "definition": "`array.find((item) => …)` devuelve el primer elemento para el que la función devuelve true, o `undefined` si no hay ninguno."
+    },
+    "addEventListener": {
+      "name": "addEventListener",
+      "definition": "`element.addEventListener('click', () => { … })` ejecuta la función cada vez que el evento ocurre en el elemento, no en ese momento. Eventos habituales: `click`, `input`, `submit`, `keydown`."
+    },
+    "localStorage": {
+      "name": "localStorage",
+      "definition": "Texto que el navegador guarda para el sitio y que sigue ahí tras recargar. `localStorage.setItem(key, value)` guarda, `localStorage.getItem(key)` lee (o devuelve `null`)."
+    },
+    "FormData": {
+      "name": "FormData",
+      "definition": "`new FormData(form)` lee todos los campos de un formulario de una vez; `data.get('name')` devuelve el valor del campo cuyo atributo `name` es `name`."
+    }
+  },
+  "levels": {
+    "shop-sign": {
+      "title": "Ponle nombre a tu tienda",
+      "intro": [
+        "¡Bienvenido a la tienda de bloques! En cada paso recibes una pequeña página web y la haces funcionar con JavaScript. Tu código va en `script.js` a la izquierda; la página y la consola están a la derecha.",
+        "Para empezar, el letrero está vacío. Una variable guarda un valor con un nombre: `const shopName = 'My shop'`. Las dos últimas líneas ya ponen las variables en el letrero."
+      ],
+      "goal": "Dale un valor a `shopName` y `city` para que el letrero muestre el nombre de tu tienda y su ciudad.",
+      "hints": [
+        "Los textos se escriben entre comillas: `'Brick Shop'`.",
+        "Cambia solo lo que hay entre las comillas de `''`: lo demás ya funciona."
+      ],
+      "recap": "`const` guarda un valor con un nombre. La página usa el nombre: cambiar el valor en un solo sitio cambia la página.",
+      "checks": {
+        "named": "El letrero muestra un nombre de tienda",
+        "hasCity": "El letrero muestra una ciudad",
+        "usesVariables": "El letrero sigue usando `shopName` y `city`"
+      }
+    },
+    "brick-count": {
+      "title": "¿12 + 8 = 128?",
+      "intro": [
+        "La tienda tiene 12 bloques rojos y 8 azules, pero el total dice 128. Mira la consola: `blueBricks` es un `string`, un texto que contiene dígitos.",
+        "Con un string, `+` pega los textos: `12 + '8'` da `'128'`. `Number('8')` convierte el texto en el número 8."
+      ],
+      "goal": "Haz que el total muestre 20, manteniendo `blueBricks` como el texto `'8'`.",
+      "hints": [
+        "El problema está en la línea que calcula `total`.",
+        "Convierte `blueBricks` antes de sumarlo."
+      ],
+      "recap": "Los valores tienen tipos. El texto leído de una página o de un formulario es un `string`: conviértelo con `Number()` antes de hacer cuentas.",
+      "checks": {
+        "total": "El total muestra 20",
+        "keepsText": "`blueBricks` sigue siendo el texto `'8'`"
+      }
+    },
+    "price-tag": {
+      "title": "La etiqueta de precio",
+      "intro": [
+        "Pegar textos con `+` se vuelve lioso enseguida. Un template literal se escribe entre acentos graves en lugar de comillas, e inserta valores con `${…}`. El ejemplo de las pistas muestra uno.",
+        "Dentro de `${…}` puedes escribir cualquier expresión, cuentas incluidas: `${price * 2}`."
+      ],
+      "goal": "Muestra `4 × Red brick = 2 €` en el resumen, con un template literal construido con las tres variables.",
+      "hints": [
+        "El acento grave no es una comilla: en un teclado español está a la derecha de la P, seguido de espacio.",
+        "El total es `quantity * price`."
+      ],
+      "recap": "Los template literals mezclan texto y valores con `${…}`. Los números se convierten en texto solos.",
+      "checks": {
+        "summary": "El resumen muestra `4 × Red brick = 2 €`",
+        "usesTemplate": "El código usa un template literal con `${…}`"
+      }
+    },
+    "sold-out": {
+      "title": "¿Agotado?",
+      "intro": [
+        "La etiqueta siempre dice In stock, incluso cuando no queda nada. El código tiene que decidir: para eso sirve `if`.",
+        "`if (stock === 0) { … } else { … }` ejecuta el primer bloque cuando el stock es 0, y el segundo en otro caso. `===` compara dos valores."
+      ],
+      "goal": "Muestra `Sold out` cuando el stock es 0, e `In stock` en otro caso.",
+      "hints": [
+        "La condición va entre paréntesis: `stock === 0`.",
+        "Pon una línea `status.textContent = …` en cada bloque."
+      ],
+      "recap": "`if` y `else` eligen entre dos trozos de código. Las comprobaciones ejecutan tu código con varios stocks: tiene que funcionar con todos.",
+      "checks": {
+        "soldOut": "Con un stock de 0, la etiqueta dice `Sold out`",
+        "inStock": "Con un stock de 7, la etiqueta dice `In stock`"
+      }
+    },
+    "almost-gone": {
+      "title": "Casi agotado",
+      "intro": [
+        "A los clientes les gusta saber cuándo un bloque está a punto de acabarse. Entre los dos casos, añade un tercero con `else if`.",
+        "Las condiciones se leen de arriba abajo y solo se ejecuta la primera verdadera: pon primero el caso más concreto."
+      ],
+      "goal": "Muestra `Sold out` en 0, `Almost gone` de 1 a 4, e `In stock` a partir de 5.",
+      "hints": [
+        "`else if (stock < 5) { … }` va entre el bloque `if` y el bloque `else`.",
+        "Un stock de 0 también es menor que 5: por eso la prueba `stock === 0` tiene que ir primero."
+      ],
+      "recap": "`else if` añade tantos casos como haga falta. El orden importa: gana la primera condición verdadera.",
+      "checks": {
+        "zero": "Con 0, la etiqueta dice `Sold out`",
+        "few": "Con 3, la etiqueta dice `Almost gone`",
+        "five": "Con 5, la etiqueta dice `In stock`",
+        "many": "Con 20, la etiqueta dice `In stock`"
+      }
+    },
+    "featured": {
+      "title": "El bloque de la semana",
+      "intro": [
+        "`document.querySelector` acepta los mismos selectores que CSS: `#banner` para un id, `.card` para una clase, `.featured .name` para un `.name` dentro de un `.featured`.",
+        "Devuelve el primer elemento que coincide. Abre `index.html` para ver la página: la tarjeta destacada es la segunda, y su nombre y su precio están vacíos."
+      ],
+      "goal": "Escribe el nombre y el precio de la tarjeta destacada, sin tocar las demás tarjetas.",
+      "hints": [
+        "`document.querySelector('.name')` devuelve el primer nombre de la página, el del bloque rojo: necesitas un selector más preciso.",
+        "Selecciona el `.name` y el `.price` dentro de `.featured`, y cambia su `textContent`."
+      ],
+      "recap": "`querySelector` + `textContent` es la base de los cambios en el DOM: seleccionar con precisión y luego escribir.",
+      "checks": {
+        "featuredName": "La tarjeta destacada muestra `Yellow window`",
+        "featuredPrice": "La tarjeta destacada muestra `0.80 €`",
+        "othersKept": "Las demás tarjetas no cambian"
+      }
+    },
+    "spotlight": {
+      "title": "Rebajas de primavera",
+      "intro": [
+        "El CSS de la página oculta cualquier elemento con la clase `hidden` y enmarca cualquier tarjeta con la clase `highlight`. Cambiar clases cambia el aspecto.",
+        "`element.classList.add('x')` añade una clase, `element.classList.remove('x')` quita una, y las demás clases se quedan."
+      ],
+      "goal": "Muestra el banner de rebajas y destaca la tarjeta amarilla.",
+      "hints": [
+        "Las variables `banner` y `yellowCard` ya contienen los elementos.",
+        "Evita `className = …`: reemplaza todas las clases, y la tarjeta perdería su clase `card`."
+      ],
+      "recap": "`classList` cambia una clase cada vez. El estilo se queda en el CSS, el JavaScript solo cambia clases.",
+      "checks": {
+        "bannerShown": "El banner es visible y conserva su clase `banner`",
+        "highlighted": "La tarjeta amarilla tiene la clase `highlight`",
+        "keepsCard": "La tarjeta amarilla conserva su clase `card`",
+        "onlyYellow": "Las demás tarjetas no están destacadas"
+      }
+    },
+    "sold-out-badge": {
+      "title": "Encendido o apagado",
+      "intro": [
+        "La clase `sold-out` pone una tarjeta en gris. La página puede llegar con la clase ya puesta, o no: tu código tiene que dejarla en el estado correcto en ambos casos.",
+        "`classList.toggle('sold-out', condition)` añade la clase cuando la condición es verdadera y la quita cuando es falsa."
+      ],
+      "goal": "La tarjeta tiene la clase `sold-out` cuando su stock es 0, y solo entonces.",
+      "hints": [
+        "Sin segundo argumento, `toggle` invierte la clase: una tarjeta que ya la tenía la perdería.",
+        "La condición es la misma que en los pasos anteriores: `stock === 0`."
+      ],
+      "recap": "`toggle(name, condition)` mantiene una clase de acuerdo con una condición, sea cual sea el estado inicial.",
+      "checks": {
+        "addsWhenEmpty": "Stock 0, sin clase todavía: la tarjeta pasa a agotada",
+        "removesWhenRestocked": "Stock 6, con la clase ya puesta: la tarjeta vuelve a estar disponible",
+        "staysSoldOut": "Stock 0, con la clase ya puesta: la tarjeta sigue agotada",
+        "staysAvailable": "Stock 6, sin clase: la tarjeta sigue disponible"
+      }
+    },
+    "countdown": {
+      "title": "Cuenta atrás",
+      "intro": [
+        "Vienen bloques nuevos. Escribir `5 4 3 2 1` a mano funciona, pero un bucle repite el trabajo por ti.",
+        "`for (let i = 5; i >= 1; i--) { … }` empieza en 5, sigue mientras `i` sea al menos 1, y resta 1 después de cada vuelta."
+      ],
+      "goal": "Muestra `5 4 3 2 1 Go!` añadiendo cada número a `text` dentro de un bucle.",
+      "hints": [
+        "Dentro del bucle, añade el número y un espacio: `text = text + i + ' '`.",
+        "Un bucle que nunca termina se detiene por ti: comprueba que `i` avanza hacia el final de la condición."
+      ],
+      "recap": "Un bucle `for` tiene un inicio, una condición y un paso. Contar hacia atrás funciona igual que contar hacia delante.",
+      "checks": {
+        "countsDown": "La cuenta atrás muestra `5 4 3 2 1 Go!`",
+        "usesLoop": "El código usa un bucle"
+      }
+    },
+    "cart-total": {
+      "title": "El total del carrito",
+      "intro": [
+        "`document.querySelectorAll('.price')` devuelve todos los precios del carrito, no solo el primero.",
+        "Recorre la lista con `for (const price of prices) { … }`: en cada vuelta, `price` es el siguiente elemento."
+      ],
+      "goal": "Muestra en el total la suma de todos los precios del carrito.",
+      "hints": [
+        "El texto de un elemento es un string: conviértelo con `Number(price.textContent)`.",
+        "Suma cada precio a `total` dentro del bucle: `total = total + …`."
+      ],
+      "recap": "`querySelectorAll` y `for...of` tratan muchos elementos de la misma forma. Las comprobaciones prueban otro carrito: el código no debe depender del número de artículos.",
+      "checks": {
+        "total": "El total muestra `4.5`",
+        "otherCart": "Con otro carrito, el total también es correcto (`6.5`)"
+      }
+    },
+    "sold-out-cards": {
+      "title": "Estantes vacíos",
+      "intro": [
+        "El bucle sobre las tarjetas está listo, y ya lee el stock de cada tarjeta. `card.querySelector('.count')` busca solo dentro de esa tarjeta.",
+        "Combina lo que sabes: un bucle, una condición y `classList`."
+      ],
+      "goal": "Cada tarjeta con un stock de 0 recibe la clase `sold-out`, las demás no.",
+      "hints": [
+        "Dentro del bucle, comprueba `stock === 0`.",
+        "Añade la clase a `card`, la tarjeta de la vuelta actual."
+      ],
+      "recap": "Bucle + condición + clase es la forma de casi todas las actualizaciones de página: recorrer los elementos y cambiar los que coinciden.",
+      "checks": {
+        "emptyMarked": "Solo las dos tarjetas vacías están agotadas",
+        "otherShelf": "En otro estante, las tarjetas correctas también están agotadas"
+      }
+    },
+    "format-price": {
+      "title": "Dos decimales",
+      "intro": [
+        "Los precios se ven como `0.5` o `2`. Una función escribe la regla una vez y la aplica en todas partes: el bucle ya llama a `formatPrice` para cada precio.",
+        "`(0.5).toFixed(2)` da el texto `'0.50'`, con exactamente dos decimales."
+      ],
+      "goal": "Haz que `formatPrice(amount)` devuelva el precio con dos decimales y ` €`, como `2.00 €`.",
+      "hints": [
+        "Solo tiene que cambiar la línea `return amount`.",
+        "Pega `' €'` detrás de `amount.toFixed(2)`."
+      ],
+      "recap": "Una función recibe parámetros y devuelve un resultado con `return`. Las comprobaciones la llaman directamente: tiene que funcionar con cualquier importe.",
+      "checks": {
+        "formatsTwo": "`formatPrice(2)` devuelve `2.00 €`",
+        "formatsHalf": "`formatPrice(0.5)` devuelve `0.50 €`",
+        "pricesOnPage": "Todos los precios de la página tienen dos decimales y €"
+      }
+    },
+    "stock-label": {
+      "title": "Una regla, muchas tarjetas",
+      "intro": [
+        "La regla de stock del paso 5 hace falta en cada tarjeta. Ponla en una función que recibe el stock y devuelve la etiqueta.",
+        "`return` termina la función en el acto: después de un `return` dentro de un `if`, el resto se salta."
+      ],
+      "goal": "Haz que `stockLabel(stock)` devuelva `Sold out`, `Almost gone` o `In stock`.",
+      "hints": [
+        "Empieza con `if (stock === 0) { return 'Sold out' }`.",
+        "Gracias a `return`, no necesitas `else`: la última línea devuelve `'In stock'`."
+      ],
+      "recap": "Una función convierte una regla en una herramienta reutilizable. El bucle la llama para cada tarjeta, las comprobaciones la llaman con cualquier stock.",
+      "checks": {
+        "labelZero": "`stockLabel(0)` devuelve `Sold out`",
+        "labelFew": "`stockLabel(4)` devuelve `Almost gone`",
+        "labelMany": "`stockLabel(40)` devuelve `In stock`",
+        "cardsLabelled": "Cada tarjeta muestra su etiqueta"
+      }
+    },
+    "catalog": {
+      "title": "El catálogo",
+      "intro": [
+        "El catálogo es ahora un array de objetos. Cada bloque tiene un `name`, un `color`, un `price` y un `stock`: `brick.name` lee uno de ellos.",
+        "`bricks.map((brick) => brick.name)` devuelve un array nuevo con lo que la función flecha devuelve para cada bloque."
+      ],
+      "goal": "Muestra el nombre de cada bloque, y luego cada precio seguido de ` €`.",
+      "hints": [
+        "Sustituye `[]` por una llamada a `bricks.map(...)`.",
+        "Para los precios, la función devuelve `brick.price + ' €'`."
+      ],
+      "recap": "`map` transforma cada elemento de un array en otra cosa, y siempre mantiene el mismo número de elementos.",
+      "checks": {
+        "names": "Se muestran los nombres de los cinco bloques",
+        "prices": "Se muestran los cinco precios con €",
+        "usesMap": "El código usa `map`"
+      }
+    },
+    "red-only": {
+      "title": "Solo los rojos",
+      "intro": [
+        "`filter` se queda con algunos elementos de un array: aquellos para los que la función devuelve true. El resultado puede ser más corto que el original.",
+        "`bricks.filter((brick) => brick.price < 1)` se queda con los bloques de menos de 1 €."
+      ],
+      "goal": "Lista solo los bloques rojos, y cuenta los bloques que hay en stock.",
+      "hints": [
+        "Para los bloques rojos, la condición es `brick.color === 'red'`.",
+        "Un bloque está en stock cuando `brick.stock > 0`."
+      ],
+      "recap": "`filter` se queda con los elementos que pasan una prueba. Encadénalo con `map` para mostrar solo lo que necesitas.",
+      "checks": {
+        "redOnly": "La lista muestra `Red brick, Red door`",
+        "inStockCount": "Hay 4 bloques en stock",
+        "usesFilter": "El código usa `filter`"
+      }
+    },
+    "find-brick": {
+      "title": "Busca un bloque",
+      "intro": [
+        "El campo de búsqueda contiene un nombre de bloque. `find` devuelve el primer elemento para el que la función devuelve true: un bloque, no un array.",
+        "Cuando nada coincide, `find` devuelve `undefined`, y el bloque `else` muestra Not found."
+      ],
+      "goal": "Encuentra el bloque cuyo nombre es el texto del campo de búsqueda, y muestra su precio.",
+      "hints": [
+        "Compara el `name` de cada bloque con `wanted`.",
+        "`bricks.find((brick) => brick.name === wanted)`"
+      ],
+      "recap": "`find` devuelve un elemento o `undefined`. Piensa siempre en el caso en que no se encuentra nada.",
+      "checks": {
+        "blueRoof": "Con `Blue roof`, el resultado es `Blue roof: 1.2 €`",
+        "otherBrick": "Con `Green plate`, el resultado es `Green plate: 2 €`",
+        "notFound": "Con un nombre desconocido, el resultado es `Not found`",
+        "usesFind": "El código usa `find`"
+      }
+    },
+    "add-to-cart": {
+      "title": "Añadir al carrito",
+      "intro": [
+        "Hasta ahora tu código se ejecutaba una vez, al cargar la página. `addEventListener` le da al navegador una función para ejecutar más tarde, cada vez que pasa algo.",
+        "`button.addEventListener('click', () => { … })` ejecuta el bloque en cada clic. Pruébalo en la página de la derecha."
+      ],
+      "goal": "Cada clic en Add to cart suma 1 al contador del letrero.",
+      "hints": [
+        "En el listener, suma 1 a `count` y escríbelo en `counter.textContent`.",
+        "`count` está declarado con `let` fuera del listener, así que recuerda su valor entre clics."
+      ],
+      "recap": "Un listener de eventos reacciona al usuario. Las variables de fuera guardan el estado entre dos eventos.",
+      "checks": {
+        "startsEmpty": "El carrito empieza en 0",
+        "oneClick": "Después de un clic, el carrito muestra 1",
+        "threeClicks": "Después de tres clics, el carrito muestra 3",
+        "usesListener": "El código usa `addEventListener`"
+      }
+    },
+    "dark-mode": {
+      "title": "Modo noche",
+      "intro": [
+        "La página tiene un aspecto nocturno: se aplica cuando `<body>` tiene la clase `dark`. `document.body` es el elemento `<body>`.",
+        "El botón tiene que pasar de un tema al otro en cada clic, y su texto tiene que decir lo que hará el siguiente clic."
+      ],
+      "goal": "Cada clic alterna la clase `dark` del body, y el botón dice `Light mode` en el tema oscuro, `Dark mode` en otro caso.",
+      "hints": [
+        "Sin segundo argumento, `classList.toggle('dark')` es justo lo que necesitas aquí: invierte la clase.",
+        "Después del toggle, lee `document.body.classList.contains('dark')` para elegir el texto."
+      ],
+      "recap": "Un listener puede leer el estado actual de la página (`contains`) para decidir qué mostrar.",
+      "checks": {
+        "turnsDark": "Un clic pone la página oscura",
+        "turnsBack": "Un segundo clic la vuelve clara",
+        "labelFollows": "El botón dice `Light mode` en modo oscuro, y luego `Dark mode` otra vez"
+      }
+    },
+    "remember-theme": {
+      "title": "Hasta mañana",
+      "intro": [
+        "Recarga la página y el tema desaparece: las variables solo viven mientras dura la página. `localStorage` guarda texto en el navegador, incluso tras recargar.",
+        "Guarda el tema en cada clic, y léelo cuando la página carga. Lo que guarda tu código aparece debajo de la consola."
+      ],
+      "goal": "Guarda el tema en `localStorage` con la clave `theme` (`dark` o `light`), y empieza en modo oscuro cuando el tema guardado es `dark`.",
+      "hints": [
+        "En el listener, después del toggle: `localStorage.setItem('theme', dark ? 'dark' : 'light')`.",
+        "Arriba, `localStorage.getItem('theme')` devuelve el texto guardado, o `null` la primera vez.",
+        "Cuando el tema guardado es oscuro, añade la clase `dark` y pon el texto `Light mode`."
+      ],
+      "recap": "`localStorage` guarda texto que sobrevive a una recarga: guarda al cambiar, lee al cargar.",
+      "checks": {
+        "startsLight": "Sin nada guardado, la página empieza clara",
+        "saves": "Un clic guarda `dark` en `theme`",
+        "restores": "Después de un clic y una recarga, la página es oscura y el botón dice `Light mode`",
+        "backToLight": "Después de dos clics y una recarga, la página vuelve a ser clara"
+      }
+    },
+    "order-form": {
+      "title": "Haz un pedido",
+      "intro": [
+        "Último paso: el formulario de pedido. Al enviarlo, el navegador lanza un evento `submit` en el formulario y luego recarga la página. `event.preventDefault()` cancela la recarga.",
+        "`new FormData(form)` lee todos los campos a la vez, y `data.get('customer')` devuelve el valor del campo cuyo `name` es `customer`."
+      ],
+      "goal": "Al enviar, quédate en la página y muestra `Thanks Ada! 3 × Blue roof are on their way.` con el nombre, la cantidad y el bloque del formulario.",
+      "hints": [
+        "La primera línea del listener es `event.preventDefault()`.",
+        "Los nombres de los campos están en `index.html`: `customer`, `brick` y `quantity`.",
+        "Construye la frase con un template literal y `data.get(...)`."
+      ],
+      "recap": "Has hecho funcionar una tienda entera: variables, condiciones, bucles, funciones, arrays, eventos, almacenamiento y formularios. ¡Es el JavaScript de la mayoría de las páginas web!",
+      "checks": {
+        "preventsReload": "Enviar el formulario no recarga la página",
+        "confirms": "Se confirma el pedido de Ada de 3 Blue roof",
+        "otherOrder": "Se confirma el pedido de Grace de 10 Red brick",
+        "usesFormData": "El código usa `new FormData`"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use 'config' as *;
+
+@mixin panel {
+  background: $color-panel;
+  border: $border-width solid $color-line;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-panel;
+}
+
+@mixin focus-ring {
+  outline: $focus-ring-width solid $color-blue;
+  outline-offset: $spacing-1;
+}
+
+// The look of the bricks in the preview: studs on a 1-stud grid.
+@mixin studs($light, $dark) {
+  background-image: radial-gradient(circle at 10px 10px, $light 0 5px, $dark 5.5px 6.5px, transparent 7px);
+  background-size: $stud $stud;
+}

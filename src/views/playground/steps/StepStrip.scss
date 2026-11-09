@@ -1,0 +1,49 @@
+@use 'config' as *;
+@use 'typography' as *;
+
+$stud-size: 30px;
+
+.steps {
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+
+  ol {
+    display: flex;
+    gap: $spacing-3;
+    margin: 0;
+    padding: $spacing-2;
+    list-style: none;
+  }
+}
+
+.stud {
+  width: $stud-size;
+  height: $stud-size;
+  border-radius: 50%;
+  border: $border-width-thick solid $color-ink-muted;
+  background: transparent;
+  color: $color-ink-inverse-soft;
+  @include display($font-size-xxs);
+  display: grid;
+  place-items: center;
+  padding: 0;
+
+  &:hover {
+    border-color: $color-ink-inverse-soft;
+  }
+
+  &.is-done {
+    background: $color-yellow;
+    border-color: $color-yellow;
+    color: $color-ink;
+    box-shadow: $shadow-brick;
+  }
+
+  &[aria-current='step'] {
+    border-color: $color-white;
+    background: $color-white;
+    color: $color-ink;
+    box-shadow: 0 0 0 3px $color-glow;
+  }
+}

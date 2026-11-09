@@ -1,0 +1,43 @@
+@use 'config' as *;
+@use 'typography' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-4;
+  border-radius: $radius-lg;
+  padding: $spacing-4 $spacing-7;
+  font-weight: $font-weight-bold;
+  border: $border-width-thick solid transparent;
+}
+
+.button-primary {
+  background: $color-yellow;
+  color: $color-ink;
+  box-shadow: 0 3px 0 $color-yellow-deep;
+  padding: $spacing-5 $spacing-10;
+
+  &:active {
+    transform: translateY($spacing-1);
+    box-shadow: 0 1px 0 $color-yellow-deep;
+  }
+}
+
+.button-secondary {
+  background: $color-panel;
+  border-color: $color-ink;
+
+  &:hover {
+    background: $color-panel-sunk;
+  }
+}
+
+.button-quiet {
+  background: transparent;
+  color: $color-blue;
+  padding-inline: $spacing-4;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

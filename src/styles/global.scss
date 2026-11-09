@@ -1,0 +1,79 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+:root {
+  // Exposed to the CodeMirror theme, which is defined in JS.
+  --color-ink: #{$color-ink};
+  --color-ink-faint: #{$color-ink-faint};
+  --color-panel-sunk: #{$color-panel-sunk};
+  --color-active-line: #{$color-active-line};
+  --font-code: #{$font-code};
+  --font-size-code: #{$font-size-code};
+  --line-height-editor: #{$line-height-editor};
+  --spacing-6: #{$spacing-6};
+
+  color: $color-ink;
+  background: $color-paper;
+  font-family: $font-body;
+  font-size: $font-size-root;
+  line-height: $line-height-body;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  font-family: $font-display;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+  line-height: $line-height-heading;
+}
+
+code {
+  font-family: $font-code;
+  font-size: $font-size-inline-code;
+  background: $color-panel-sunk;
+  border: $border-width solid $color-line;
+  border-radius: $radius-sm;
+  padding: 0.05em 0.3em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -1,0 +1,58 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+$light-size: 11px;
+
+.browser {
+  @include panel;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  padding: $spacing-4 $spacing-6;
+  background: $color-panel-sunk;
+  border-bottom: $border-width solid $color-line;
+}
+
+.browser-lights {
+  display: flex;
+  gap: $spacing-3;
+
+  i {
+    width: $light-size;
+    height: $light-size;
+    border-radius: 50%;
+    background: $color-line;
+  }
+}
+
+.browser-address {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: $spacing-2 $spacing-6;
+  border-radius: $radius-pill;
+  background: $color-panel;
+  border: $border-width solid $color-line;
+  @include code($font-size-xxs);
+  color: $color-ink-soft;
+}
+
+.browser-viewport {
+  flex: 1;
+  min-height: 0;
+  background: $color-preview-background;
+
+  @media (max-width: $breakpoint-desktop - 1) {
+    height: min(90vw, 460px);
+  }
+}

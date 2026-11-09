@@ -1,0 +1,35 @@
+$font-display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
+$font-body: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+$font-code: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+$font-size-root: 16px;
+$font-size-hero: 3.5rem;
+$font-size-title: 1.75rem;
+$font-size-brand: 1.25rem;
+$font-size-heading: 1.15rem;
+$font-size-code: 0.9375rem;
+$font-size-sm: 0.9rem;
+$font-size-xs: 0.85rem;
+$font-size-xxs: 0.8rem;
+$font-size-inline-code: 0.88em;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1;
+$line-height-heading: 1.15;
+$line-height-body: 1.5;
+$line-height-code: 1.55;
+$line-height-editor: 1.6;
+
+@mixin display($size) {
+  font-family: $font-display;
+  font-weight: $font-weight-semibold;
+  font-size: $size;
+}
+
+@mixin code($size: $font-size-sm) {
+  font-family: $font-code;
+  font-size: $size;
+}

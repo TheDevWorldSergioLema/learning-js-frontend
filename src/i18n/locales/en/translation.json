@@ -1,0 +1,546 @@
+{
+  "app": {
+    "name": "Brick Shop",
+    "title": "Brick Shop: learn JavaScript and the DOM",
+    "description": "Learn JavaScript by running a toy brick shop: variables, conditions, loops, functions, arrays, the DOM, events, localStorage and forms in 20 guided steps."
+  },
+  "language": {
+    "label": "Language",
+    "names": {
+      "en": "English",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "de": "Deutsch"
+    }
+  },
+  "codeComments": {
+    "letChanges": "let can change, const cannot",
+    "nameYourShop": "Give your shop a name and a city",
+    "typeofHint": "Open the console below: what types are they?",
+    "summaryGoal": "Show: 4 × Red brick = 2 €",
+    "soldOutRule": "Sold out when the stock is 0, In stock otherwise",
+    "almostGoneRule": "Add a case: Almost gone below 5",
+    "byId": "the element with id=\"cart\"",
+    "firstOfClass": "the first element with class=\"card\"",
+    "inside": "an h2 inside a .card",
+    "fillFeatured": "Fill the name and the price of the featured card",
+    "showBanner": "Show the banner: remove its hidden class",
+    "highlightCard": "Add the highlight class to the yellow card",
+    "toggleFlip": "adds it if missing, removes it if present",
+    "toggleForce": "adds it if isOpen is true, removes it if false",
+    "toggleRule": "The card is sold-out when the stock is 0, and only then",
+    "countdownLoop": "Add 5 4 3 2 1 to text with a loop",
+    "addEveryPrice": "Add every price to the total",
+    "searchInside": "searches inside this card only",
+    "markIfEmpty": "Add the sold-out class when the stock is 0",
+    "formatPriceRule": "formatPrice(2) must return '2.00 €'",
+    "stockLabelRule": "Sold out at 0, Almost gone below 5, In stock otherwise",
+    "mapNames": "The name of every brick",
+    "mapPrices": "The price of every brick, followed by ' €'",
+    "filterRed": "Only the red bricks",
+    "filterInStock": "Only the bricks whose stock is above 0",
+    "findByName": "The brick whose name is wanted",
+    "onClick": "On every click: add 1 to count and show it",
+    "addsOrRemoves": "adds or removes the class",
+    "toggleTheme": "On click: toggle the dark class on document.body and update the label",
+    "readSavedTheme": "If the saved theme is dark, start in dark mode",
+    "saveTheme": "Save the theme: localStorage.setItem(...)",
+    "noReload": "stay on the page",
+    "preventReload": "1. Stop the page from reloading",
+    "readForm": "2. Read the fields with new FormData(form)"
+  },
+  "steps": {
+    "label": "Steps",
+    "step": "Step {{number}}: {{title}}",
+    "stepDone": "Step {{number}}: {{title}}, done",
+    "tooltip": "{{number}}. {{title}}"
+  },
+  "lesson": {
+    "meta": "Step {{step}} of {{total}}",
+    "goal": "Your goal: ",
+    "firstHint": "Need a hint?",
+    "nextHint": "Another hint",
+    "hintCount": "{{current}} of {{total}}",
+    "showSolution": "Show me the solution",
+    "confirmLabel": "Replace your code with the solution?",
+    "confirmText": "This replaces your code with the solution.",
+    "replaceCode": "Replace my code",
+    "keepTrying": "Keep trying",
+    "definition": "Definition"
+  },
+  "editor": {
+    "label": "Code editor",
+    "files": "File",
+    "tabs": {
+      "js": "script.js",
+      "html": "index.html"
+    },
+    "code": {
+      "js": "JavaScript code",
+      "html": "HTML code"
+    },
+    "startOver": "Start over",
+    "run": "Run",
+    "runShortcut": "Run the code (Ctrl+Enter)",
+    "htmlFixed": "The page is fixed in every step: read it to know what to select, and write your code in <strong>script.js</strong>."
+  },
+  "preview": {
+    "label": "Preview",
+    "address": "shop://step-{{step}}/index.html",
+    "page": "Your page",
+    "probe": "Page used by the checks"
+  },
+  "console": {
+    "title": "Console",
+    "empty": "Nothing logged yet. Try `console.log('hello')` in your code.",
+    "storage": "localStorage",
+    "clearStorage": "Clear and run again",
+    "notices": {
+      "formReload": "The form was sent and the page reloaded: your code ran again from the start. Call `event.preventDefault()` in the submit listener to stay on the page."
+    }
+  },
+  "errors": {
+    "syntax": "Syntax error: {{message}}",
+    "runtime": "{{name}}: {{message}}",
+    "infiniteLoop": "This loop never ends: it was stopped after {{count}} turns. Check its condition.",
+    "atLine": "{{error}} (line {{line}})"
+  },
+  "check": {
+    "title": "Checks",
+    "count_one": "{{passed}} of {{count}} check passed",
+    "count_other": "{{passed}} of {{count}} checks passed",
+    "status": {
+      "pass": "passed",
+      "fail": "not yet",
+      "error": "the code failed"
+    },
+    "solved": "Step complete!",
+    "finished": "You finished every step!",
+    "nextStep": "Next step"
+  },
+  "concepts": {
+    "variables": {
+      "name": "variables",
+      "definition": "A named box that holds a value. `const` creates one that never gets a new value, `let` one that can change later: `let count = 0` then `count = count + 1`."
+    },
+    "types": {
+      "name": "types",
+      "definition": "Every value has a type: `number` (12, 0.5), `string` (text between quotes, '12'), `boolean` (true, false), and more. `typeof` tells you which one. With a string, `+` glues text instead of adding numbers."
+    },
+    "conditions": {
+      "name": "if / else",
+      "definition": "`if (condition) { … } else { … }` runs the first block when the condition is true, the second one otherwise. Compare with `===`, `!==`, `<`, `>`, `<=`, `>=`."
+    },
+    "querySelector": {
+      "name": "querySelector",
+      "definition": "`document.querySelector(selector)` returns the first element matching a CSS selector (`#id`, `.class`, `.card .name`), or `null`. Its `textContent` is the text inside it: read it or give it a new value."
+    },
+    "classList": {
+      "name": "classList",
+      "definition": "The list of classes of an element. `add`, `remove` and `toggle` change it, `contains` tells whether a class is there. The page's CSS gives each class its look."
+    },
+    "loops": {
+      "name": "for",
+      "definition": "`for (let i = 0; i < 3; i++) { … }` runs the block again and again: start, condition checked before every turn, step after every turn."
+    },
+    "querySelectorAll": {
+      "name": "querySelectorAll",
+      "definition": "`document.querySelectorAll(selector)` returns every element matching the selector, in page order. Go through them with `for (const el of list) { … }`; `list.length` counts them."
+    },
+    "functions": {
+      "name": "function",
+      "definition": "A named piece of code you can call again and again. It receives values as parameters and gives one back with `return`: `function double(n) { return n * 2 }`."
+    },
+    "map": {
+      "name": "map",
+      "definition": "`array.map((item) => …)` builds a new array of the same length, with what the function returns for each item. The original array is not changed."
+    },
+    "filter": {
+      "name": "filter",
+      "definition": "`array.filter((item) => …)` builds a new array with only the items for which the function returns true."
+    },
+    "find": {
+      "name": "find",
+      "definition": "`array.find((item) => …)` returns the first item for which the function returns true, or `undefined` when there is none."
+    },
+    "addEventListener": {
+      "name": "addEventListener",
+      "definition": "`element.addEventListener('click', () => { … })` runs the function every time the event happens on the element, not right away. Common events: `click`, `input`, `submit`, `keydown`."
+    },
+    "localStorage": {
+      "name": "localStorage",
+      "definition": "Text saved by the browser for the site, still there after a reload. `localStorage.setItem(key, value)` saves, `localStorage.getItem(key)` reads (or returns `null`)."
+    },
+    "FormData": {
+      "name": "FormData",
+      "definition": "`new FormData(form)` reads every field of a form at once; `data.get('name')` returns the value of the field whose `name` attribute is `name`."
+    }
+  },
+  "levels": {
+    "shop-sign": {
+      "title": "Name your shop",
+      "intro": [
+        "Welcome to the Brick Shop! In every step you get a small web page and make it work with JavaScript. Your code goes in `script.js` on the left; the page and the console are on the right.",
+        "First, the sign is blank. A variable keeps a value under a name: `const shopName = 'My shop'`. The last two lines already put the variables on the sign."
+      ],
+      "goal": "Give `shopName` and `city` a value so the sign shows the name of your shop and its city.",
+      "hints": [
+        "Text values are written between quotes: `'Brick Shop'`.",
+        "Only change what is between the quotes of `''`: the rest already works."
+      ],
+      "recap": "`const` keeps a value under a name. The page uses the name, so changing the value in one place changes the page.",
+      "checks": {
+        "named": "The sign shows a shop name",
+        "hasCity": "The sign shows a city",
+        "usesVariables": "The sign still uses `shopName` and `city`"
+      }
+    },
+    "brick-count": {
+      "title": "12 + 8 = 128?",
+      "intro": [
+        "The shop has 12 red bricks and 8 blue ones, but the total says 128. Look at the console: `blueBricks` is a `string`, text that happens to contain digits.",
+        "With a string, `+` glues texts together: `12 + '8'` gives `'128'`. `Number('8')` turns the text into the number 8."
+      ],
+      "goal": "Make the total show 20, keeping `blueBricks` as the text `'8'`.",
+      "hints": [
+        "The problem is in the line that computes `total`.",
+        "Convert `blueBricks` before adding it."
+      ],
+      "recap": "Values have types. Text read from a page or a form is a `string`: convert it with `Number()` before doing maths.",
+      "checks": {
+        "total": "The total shows 20",
+        "keepsText": "`blueBricks` is still the text `'8'`"
+      }
+    },
+    "price-tag": {
+      "title": "The price tag",
+      "intro": [
+        "Gluing texts with `+` quickly gets messy. A template literal is written between backticks instead of quotes, and inserts values with `${…}`. The example in the hints shows one.",
+        "Inside `${…}` you can write any expression, maths included: `${price * 2}`."
+      ],
+      "goal": "Show `4 × Red brick = 2 €` in the summary, with a template literal built from the three variables.",
+      "hints": [
+        "Backticks are not quotes: on most keyboards, the key is next to Enter or 1.",
+        "The total is `quantity * price`."
+      ],
+      "recap": "Template literals mix text and values with `${…}`. Numbers become text on their own.",
+      "checks": {
+        "summary": "The summary shows `4 × Red brick = 2 €`",
+        "usesTemplate": "The code uses a template literal with `${…}`"
+      }
+    },
+    "sold-out": {
+      "title": "Sold out?",
+      "intro": [
+        "The badge always says In stock, even when there is nothing left. The code must decide: that's what `if` is for.",
+        "`if (stock === 0) { … } else { … }` runs the first block when the stock is 0, the second one otherwise. `===` compares two values."
+      ],
+      "goal": "Show `Sold out` when the stock is 0, and `In stock` otherwise.",
+      "hints": [
+        "The condition goes between parentheses: `stock === 0`.",
+        "Put one `status.textContent = …` line in each block."
+      ],
+      "recap": "`if` and `else` choose between two pieces of code. The checks run your code with several stocks: it must work for all of them.",
+      "checks": {
+        "soldOut": "With a stock of 0, the badge says `Sold out`",
+        "inStock": "With a stock of 7, the badge says `In stock`"
+      }
+    },
+    "almost-gone": {
+      "title": "Almost gone",
+      "intro": [
+        "Shoppers like to know when a brick is about to run out. Between the two cases, add a third one with `else if`.",
+        "Conditions are read from top to bottom and only the first true one runs: put the most specific case first."
+      ],
+      "goal": "Show `Sold out` at 0, `Almost gone` from 1 to 4, and `In stock` from 5.",
+      "hints": [
+        "`else if (stock < 5) { … }` goes between the `if` block and the `else` block.",
+        "A stock of 0 is also below 5: that's why the `stock === 0` test must come first."
+      ],
+      "recap": "`else if` adds as many cases as needed. Order matters: the first true condition wins.",
+      "checks": {
+        "zero": "With 0, the badge says `Sold out`",
+        "few": "With 3, the badge says `Almost gone`",
+        "five": "With 5, the badge says `In stock`",
+        "many": "With 20, the badge says `In stock`"
+      }
+    },
+    "featured": {
+      "title": "Brick of the week",
+      "intro": [
+        "`document.querySelector` takes the same selectors as CSS: `#banner` for an id, `.card` for a class, `.featured .name` for a `.name` inside a `.featured`.",
+        "It returns the first matching element. Open `index.html` to see the page: the featured card is the second one, and its name and price are empty."
+      ],
+      "goal": "Write the name and the price of the featured card, without touching the other cards.",
+      "hints": [
+        "`document.querySelector('.name')` returns the first name of the page, the red brick's: you need a more precise selector.",
+        "Select the `.name` and the `.price` inside `.featured`, then set their `textContent`."
+      ],
+      "recap": "`querySelector` + `textContent` is the base of DOM changes: select precisely, then write.",
+      "checks": {
+        "featuredName": "The featured card shows `Yellow window`",
+        "featuredPrice": "The featured card shows `0.80 €`",
+        "othersKept": "The other cards are unchanged"
+      }
+    },
+    "spotlight": {
+      "title": "Spring sale",
+      "intro": [
+        "The page's CSS hides any element with the `hidden` class and frames any card with the `highlight` class. Changing classes changes the look.",
+        "`element.classList.add('x')` adds a class, `element.classList.remove('x')` removes one, and the other classes stay."
+      ],
+      "goal": "Show the sale banner and highlight the yellow card.",
+      "hints": [
+        "The variables `banner` and `yellowCard` already hold the elements.",
+        "Avoid `className = …`: it replaces every class, and the card would lose its `card` class."
+      ],
+      "recap": "`classList` changes one class at a time. The style stays in the CSS, the JavaScript only switches classes.",
+      "checks": {
+        "bannerShown": "The banner is visible and keeps its `banner` class",
+        "highlighted": "The yellow card has the `highlight` class",
+        "keepsCard": "The yellow card keeps its `card` class",
+        "onlyYellow": "The other cards are not highlighted"
+      }
+    },
+    "sold-out-badge": {
+      "title": "On or off",
+      "intro": [
+        "The `sold-out` class greys a card out. The page may come with the class already there, or not: your code must leave it in the right state either way.",
+        "`classList.toggle('sold-out', condition)` adds the class when the condition is true and removes it when it's false."
+      ],
+      "goal": "The card has the `sold-out` class when its stock is 0, and only then.",
+      "hints": [
+        "Without a second argument, `toggle` flips the class: a card that already had it would lose it.",
+        "The condition is the same as in the previous steps: `stock === 0`."
+      ],
+      "recap": "`toggle(name, condition)` keeps a class in line with a condition, whatever the starting state.",
+      "checks": {
+        "addsWhenEmpty": "Stock 0, no class yet: the card becomes sold out",
+        "removesWhenRestocked": "Stock 6, class already there: the card is available again",
+        "staysSoldOut": "Stock 0, class already there: the card stays sold out",
+        "staysAvailable": "Stock 6, no class: the card stays available"
+      }
+    },
+    "countdown": {
+      "title": "Countdown",
+      "intro": [
+        "New bricks are on their way. Writing `5 4 3 2 1` by hand works, but a loop repeats the work for you.",
+        "`for (let i = 5; i >= 1; i--) { … }` starts at 5, runs while `i` is at least 1, and takes 1 away after every turn."
+      ],
+      "goal": "Show `5 4 3 2 1 Go!` by adding each number to `text` in a loop.",
+      "hints": [
+        "Inside the loop, add the number and a space: `text = text + i + ' '`.",
+        "A loop that never stops is stopped for you: check that `i` goes towards the end of the condition."
+      ],
+      "recap": "A `for` loop has a start, a condition and a step. Counting down works just like counting up.",
+      "checks": {
+        "countsDown": "The countdown shows `5 4 3 2 1 Go!`",
+        "usesLoop": "The code uses a loop"
+      }
+    },
+    "cart-total": {
+      "title": "The cart total",
+      "intro": [
+        "`document.querySelectorAll('.price')` returns every price of the cart, not only the first one.",
+        "Go through the list with `for (const price of prices) { … }`: on each turn, `price` is the next element."
+      ],
+      "goal": "Show the sum of every price of the cart in the total.",
+      "hints": [
+        "The text of an element is a string: convert it with `Number(price.textContent)`.",
+        "Add each price to `total` inside the loop: `total = total + …`."
+      ],
+      "recap": "`querySelectorAll` and `for...of` treat many elements the same way. The checks try another cart: the code must not depend on the number of items.",
+      "checks": {
+        "total": "The total shows `4.5`",
+        "otherCart": "With another cart, the total is right too (`6.5`)"
+      }
+    },
+    "sold-out-cards": {
+      "title": "Empty shelves",
+      "intro": [
+        "The loop over the cards is ready, and it already reads each card's stock. `card.querySelector('.count')` searches inside that card only.",
+        "Combine what you know: a loop, a condition and `classList`."
+      ],
+      "goal": "Every card with a stock of 0 gets the `sold-out` class, the others don't.",
+      "hints": [
+        "Inside the loop, test `stock === 0`.",
+        "Add the class to `card`, the card of the current turn."
+      ],
+      "recap": "Loop + condition + class is the shape of most page updates: go through elements and change the ones that match.",
+      "checks": {
+        "emptyMarked": "Only the two empty cards are sold out",
+        "otherShelf": "On another shelf, the right cards are sold out too"
+      }
+    },
+    "format-price": {
+      "title": "Two decimals",
+      "intro": [
+        "Prices show up as `0.5` or `2`. A function writes the rule once and applies it everywhere: the loop already calls `formatPrice` for every price.",
+        "`(0.5).toFixed(2)` gives the text `'0.50'`, with exactly two decimals."
+      ],
+      "goal": "Make `formatPrice(amount)` return the price with two decimals and ` €`, like `2.00 €`.",
+      "hints": [
+        "Only the line `return amount` needs to change.",
+        "Glue `' €'` after `amount.toFixed(2)`."
+      ],
+      "recap": "A function takes parameters and gives a result back with `return`. The checks call it directly, so it must work for any amount.",
+      "checks": {
+        "formatsTwo": "`formatPrice(2)` returns `2.00 €`",
+        "formatsHalf": "`formatPrice(0.5)` returns `0.50 €`",
+        "pricesOnPage": "Every price of the page has two decimals and €"
+      }
+    },
+    "stock-label": {
+      "title": "One rule, many cards",
+      "intro": [
+        "The stock rule from step 5 is needed on every card. Put it in a function that receives the stock and returns the label.",
+        "`return` ends the function right away: after a `return` inside an `if`, the rest is skipped."
+      ],
+      "goal": "Make `stockLabel(stock)` return `Sold out`, `Almost gone` or `In stock`.",
+      "hints": [
+        "Start with `if (stock === 0) { return 'Sold out' }`.",
+        "Thanks to `return`, you don't need `else`: the last line returns `'In stock'`."
+      ],
+      "recap": "A function turns a rule into a reusable tool. The loop calls it for each card, the checks call it with any stock.",
+      "checks": {
+        "labelZero": "`stockLabel(0)` returns `Sold out`",
+        "labelFew": "`stockLabel(4)` returns `Almost gone`",
+        "labelMany": "`stockLabel(40)` returns `In stock`",
+        "cardsLabelled": "Every card shows its label"
+      }
+    },
+    "catalog": {
+      "title": "The catalog",
+      "intro": [
+        "The catalog is now an array of objects. Each brick has a `name`, a `color`, a `price` and a `stock`: `brick.name` reads one of them.",
+        "`bricks.map((brick) => brick.name)` returns a new array with what the arrow function returns for each brick."
+      ],
+      "goal": "Show the name of every brick, then every price followed by ` €`.",
+      "hints": [
+        "Replace `[]` with a call to `bricks.map(...)`.",
+        "For the prices, the function returns `brick.price + ' €'`."
+      ],
+      "recap": "`map` transforms every item of an array into something else, and always keeps the same number of items.",
+      "checks": {
+        "names": "The names of the five bricks are shown",
+        "prices": "The five prices are shown with €",
+        "usesMap": "The code uses `map`"
+      }
+    },
+    "red-only": {
+      "title": "Only the red ones",
+      "intro": [
+        "`filter` keeps some items of an array: those for which the function returns true. The result can be shorter than the original.",
+        "`bricks.filter((brick) => brick.price < 1)` keeps the bricks cheaper than 1 €."
+      ],
+      "goal": "List the red bricks only, and count the bricks that are in stock.",
+      "hints": [
+        "For the red bricks, the condition is `brick.color === 'red'`.",
+        "A brick is in stock when `brick.stock > 0`."
+      ],
+      "recap": "`filter` keeps the items that pass a test. Chain it with `map` to show only what you need.",
+      "checks": {
+        "redOnly": "The list shows `Red brick, Red door`",
+        "inStockCount": "4 bricks are in stock",
+        "usesFilter": "The code uses `filter`"
+      }
+    },
+    "find-brick": {
+      "title": "Find a brick",
+      "intro": [
+        "The search field holds a brick name. `find` returns the first item for which the function returns true: one brick, not an array.",
+        "When nothing matches, `find` returns `undefined`, and the `else` block shows Not found."
+      ],
+      "goal": "Find the brick whose name is the text of the search field, and show its price.",
+      "hints": [
+        "Compare each brick's `name` with `wanted`.",
+        "`bricks.find((brick) => brick.name === wanted)`"
+      ],
+      "recap": "`find` returns one item or `undefined`. Always plan for the case where nothing is found.",
+      "checks": {
+        "blueRoof": "With `Blue roof`, the result is `Blue roof: 1.2 €`",
+        "otherBrick": "With `Green plate`, the result is `Green plate: 2 €`",
+        "notFound": "With an unknown name, the result is `Not found`",
+        "usesFind": "The code uses `find`"
+      }
+    },
+    "add-to-cart": {
+      "title": "Add to cart",
+      "intro": [
+        "Until now your code ran once, when the page loaded. `addEventListener` gives the browser a function to run later, every time something happens.",
+        "`button.addEventListener('click', () => { … })` runs the block on every click. Try it in the page on the right."
+      ],
+      "goal": "Every click on Add to cart adds 1 to the counter of the sign.",
+      "hints": [
+        "In the listener, add 1 to `count`, then write it in `counter.textContent`.",
+        "`count` is declared with `let` outside the listener, so it remembers its value between clicks."
+      ],
+      "recap": "An event listener reacts to the user. The variables outside of it keep the state between two events.",
+      "checks": {
+        "startsEmpty": "The cart starts at 0",
+        "oneClick": "After one click, the cart shows 1",
+        "threeClicks": "After three clicks, the cart shows 3",
+        "usesListener": "The code uses `addEventListener`"
+      }
+    },
+    "dark-mode": {
+      "title": "Night mode",
+      "intro": [
+        "The page has a night look: it applies when `<body>` has the `dark` class. `document.body` is the `<body>` element.",
+        "The button should switch from one theme to the other on each click, and its label should say what the next click does."
+      ],
+      "goal": "Each click toggles the `dark` class of the body, and the button says `Light mode` in the dark theme, `Dark mode` otherwise.",
+      "hints": [
+        "Without a second argument, `classList.toggle('dark')` is what you need here: it flips the class.",
+        "After the toggle, read `document.body.classList.contains('dark')` to choose the label."
+      ],
+      "recap": "A listener can read the current state of the page (`contains`) to decide what to show.",
+      "checks": {
+        "turnsDark": "One click turns the page dark",
+        "turnsBack": "A second click turns it light again",
+        "labelFollows": "The button says `Light mode` in dark mode, then `Dark mode` again"
+      }
+    },
+    "remember-theme": {
+      "title": "See you tomorrow",
+      "intro": [
+        "Reload the page and the theme is gone: variables live only as long as the page. `localStorage` keeps text in the browser, even after a reload.",
+        "Save the theme on every click, and read it when the page loads. What your code saves is shown under the console."
+      ],
+      "goal": "Save the theme in `localStorage` under the key `theme` (`dark` or `light`), and start in dark mode when the saved theme is `dark`.",
+      "hints": [
+        "In the listener, after the toggle: `localStorage.setItem('theme', dark ? 'dark' : 'light')`.",
+        "At the top, `localStorage.getItem('theme')` returns the saved text, or `null` the first time.",
+        "When the saved theme is dark, add the `dark` class and set the label to `Light mode`."
+      ],
+      "recap": "`localStorage` saves text that survives a reload: save on change, read on load.",
+      "checks": {
+        "startsLight": "With nothing saved, the page starts light",
+        "saves": "A click saves `dark` under `theme`",
+        "restores": "After a click and a reload, the page is dark and the button says `Light mode`",
+        "backToLight": "After two clicks and a reload, the page is light again"
+      }
+    },
+    "order-form": {
+      "title": "Place an order",
+      "intro": [
+        "Last step: the order form. When it's sent, the browser fires a `submit` event on the form, then reloads the page. `event.preventDefault()` cancels the reload.",
+        "`new FormData(form)` reads all the fields at once, and `data.get('customer')` returns the value of the field whose `name` is `customer`."
+      ],
+      "goal": "On submit, stay on the page and show `Thanks Ada! 3 × Blue roof are on their way.` with the name, quantity and brick of the form.",
+      "hints": [
+        "The first line of the listener is `event.preventDefault()`.",
+        "The field names are in `index.html`: `customer`, `brick` and `quantity`.",
+        "Build the sentence with a template literal and `data.get(...)`."
+      ],
+      "recap": "You made a whole shop work: variables, conditions, loops, functions, arrays, events, storage and forms. That's the JavaScript of most web pages!",
+      "checks": {
+        "preventsReload": "Sending the form doesn't reload the page",
+        "confirms": "Ada's order of 3 Blue roof is confirmed",
+        "otherOrder": "Grace's order of 10 Red brick is confirmed",
+        "usesFormData": "The code uses `new FormData`"
+      }
+    }
+  }
+}

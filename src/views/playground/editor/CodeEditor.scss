@@ -1,0 +1,72 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.editor {
+  @include panel;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.editor-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-4;
+  padding: $spacing-3 $spacing-4 0;
+  background: $color-panel-sunk;
+  border-bottom: $border-width solid $color-line;
+}
+
+.tabs {
+  display: flex;
+  gap: $spacing-1;
+}
+
+.tab {
+  border: $border-width solid transparent;
+  border-bottom: 0;
+  border-radius: $radius-md $radius-md 0 0;
+  background: transparent;
+  padding: 7px $spacing-7;
+  @include code;
+  color: $color-ink-soft;
+  margin-bottom: -$border-width;
+
+  &[aria-selected='true'] {
+    background: $color-panel;
+    border-color: $color-line;
+    color: $color-ink;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.editor-note {
+  margin: 0;
+  padding: $spacing-4 $spacing-7;
+  font-size: $font-size-sm;
+  color: $color-ink-soft;
+  border-bottom: $border-width solid $color-line;
+}
+
+.editor-body {
+  flex: 1;
+  min-height: 0;
+
+  > div {
+    height: 100%;
+  }
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4;
+  padding-bottom: $spacing-3;
+}
+
+.run-button {
+  padding: $spacing-3 $spacing-7;
+}

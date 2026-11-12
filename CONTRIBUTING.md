@@ -3,19 +3,24 @@
 Thanks for your interest in Brick Shop! Contributions are welcome: bug fixes, new steps, better explanations,
 translations, accessibility and design improvements.
 
-## Attribution
+## License and attribution
 
-You're free to reuse ideas or code from this project. If you do, a link back to the project or to
-[sergiolema.dev](https://sergiolema.dev) is appreciated. Contributors are credited through the Git history of
-their pull requests.
+The project is released under the [MIT license](LICENSE): you're free to reuse its code and lessons, as long as
+you keep the copyright notice. A link back to the project or to [sergiolema.dev](https://sergiolema.dev) is
+appreciated. By opening a pull request, you agree that your contribution is released under the same license.
+Contributors are credited through the Git history of their pull requests.
 
 ## Before you start
 
 - **Small fixes** (typos, wrong translation, small bug): open a pull request directly.
 - **Larger changes** (a new step, a new feature, a redesign): open an issue first to describe what you want to do,
   so we can agree on it before you spend time on the code.
-- **Bugs**: open an issue with the step, the browser, the language selected, the code you typed and what you
-  expected to happen. A screenshot helps.
+- **Bugs, ideas and translations**: open an issue, the templates ask for what's needed (for a bug: the step, the
+  browser, the language selected and the code you typed).
+- **Questions**: open an issue too, there's no silly question.
+- **First contribution?** Look for the issues labeled
+  [`good first issue`](../../issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+- **Security issues**: don't open a public issue, follow [`SECURITY.md`](SECURITY.md).
 
 ## Workflow
 
@@ -65,6 +70,17 @@ The full conventions are in [`CLAUDE.md`](CLAUDE.md) and the architecture in [`R
 - Comments in a step's code are `// {{key}}` placeholders, translated under `codeComments.<key>`, on one line.
 - The student's code only runs through `runCode` (`src/utils/runner.js`).
 - Inline code in texts uses backticks and stays identical in every language.
+
+## Translations
+
+You can help without writing any code: fixing a translation only means editing
+`src/i18n/locales/<language>/translation.json`.
+
+- Keep the keys, the `{{placeholders}}` and the `` `inline code` `` exactly as in English: `npm test` checks it.
+- Translate the meaning, not word by word, and keep the tone friendly and short: the readers are beginners.
+- Code comments (`codeComments`) must stay on one line, so they stay `//` comments.
+- To add a new language, open an issue first: it needs a new locale folder, its import in `src/i18n/index.js`, an
+  entry in `src/types/language.js`, its name under `language.names` and a translation of every text.
 
 ## Code of conduct
 

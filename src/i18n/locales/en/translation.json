@@ -14,6 +14,11 @@
       "de": "Deutsch"
     }
   },
+  "footer": {
+    "github": "Source code on GitHub",
+    "linkedin": "LinkedIn",
+    "blog": "Blog"
+  },
   "codeComments": {
     "letChanges": "let can change, const cannot",
     "nameYourShop": "Give your shop a name and a city",

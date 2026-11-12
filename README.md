@@ -73,12 +73,12 @@ src/
 ├── hooks/              useDebounced (run the code once typing stops), useErrorText (translated run errors),
 │                       useLatest, useCodeComments (translated code comments)
 ├── i18n/               i18next setup and locales/<en|fr|es|it|de>/translation.json
-├── layout/             PublicLayout: top bar with the brand, the step strip and the language selector
+├── layout/             PublicLayout: top bar with the brand, the step strip and the language selector; Footer with the project links
 ├── services/           progressService and languageService: read and write the progress and the language in localStorage
 ├── stores/             progressStore (zustand): current step, completed steps, code and hints per step
 ├── styles/             _config.scss (tokens), _typography.scss, _mixins.scss, global.scss
 ├── test/               shared test setup, render helpers and jsdom pages
-├── types/              enums (EditorTab, RunError, LogLevel, CheckStatus, Notice, CharKind, ButtonVariant, Language) and JSDoc entities
+├── types/              enums (EditorTab, RunError, LogLevel, CheckStatus, Notice, CharKind, ButtonVariant, Language, FooterLink) and JSDoc entities
 ├── utils/              page (the shop page document), runner (runs the student's code), checks (runs a step's checks),
 │                       loopGuard and scan (stop endless loops), memoryStorage, formatValue (console output), codeComments
 └── views/
@@ -150,3 +150,7 @@ The shop page is a separate document: its look (sign, cards, badges, form, dark 
 `levels.test.js` runs every step in jsdom: the solution must pass every check, the starter must fail at least one
 without crashing, and every text must exist in every language. `locales.test.js` checks that every language has the
 same keys, placeholders, inline code and tags as English.
+
+## Contributing
+
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).

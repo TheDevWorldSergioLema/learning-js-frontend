@@ -1,0 +1,35 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-4 $spacing-12;
+  padding: $spacing-3 $spacing-8;
+  border-top: $border-width solid $color-line;
+  background: $color-panel;
+  font-size: $font-size-xxs;
+}
+
+.footer-author {
+  display: inline-flex;
+  gap: $spacing-8;
+}
+
+.footer-link {
+  color: $color-ink-muted;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-ink;
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}

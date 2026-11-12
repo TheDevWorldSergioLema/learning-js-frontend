@@ -1,0 +1,22 @@
+name: Translation
+description: A wrong, unclear or missing translation
+labels: [i18n]
+body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options: [English, Français, Español, Italiano, Deutsch, Another language]
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where
+      description: The step or screen, and the current text.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested text

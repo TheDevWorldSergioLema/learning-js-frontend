@@ -1,0 +1,39 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: input
+    id: step
+    attributes:
+      label: Step
+      description: The number or title of the step where it happens, if any.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Your code
+      description: The code in the editor when it happened, if relevant.
+      render: text
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language of the interface
+      options: [English, Français, Español, Italiano, Deutsch]
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Firefox 140 on Windows, Safari on iPhone...
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag and drop an image here, if it helps.

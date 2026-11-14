@@ -19,6 +19,17 @@
     "linkedin": "LinkedIn",
     "blog": "Blog"
   },
+  "screenNotice": {
+    "small": {
+      "title": "Oye, quizá necesites una pantalla más grande para ver todo el contenido",
+      "text": "Este curso funciona mejor en una ventana de al menos 1280 píxeles de ancho. Amplía tu ventana o continúa de todos modos.",
+      "continue": "Continuar de todos modos"
+    },
+    "mobile": {
+      "title": "¿De verdad crees que puedes programar algo en un móvil?",
+      "text": "Pásate a un ordenador."
+    }
+  },
   "codeComments": {
     "letChanges": "let puede cambiar, const no",
     "nameYourShop": "Dale un nombre y una ciudad a tu tienda",

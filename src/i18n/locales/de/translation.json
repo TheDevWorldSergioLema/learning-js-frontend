@@ -19,6 +19,17 @@
     "linkedin": "LinkedIn",
     "blog": "Blog"
   },
+  "screenNotice": {
+    "small": {
+      "title": "Hey, du brauchst vielleicht einen größeren Bildschirm, um alle Inhalte zu sehen",
+      "text": "Dieser Kurs funktioniert am besten in einem Fenster mit mindestens 1280 Pixeln Breite. Vergrößere dein Fenster oder mach trotzdem weiter.",
+      "continue": "Trotzdem weitermachen"
+    },
+    "mobile": {
+      "title": "Glaubst du wirklich, dass du auf einem Handy etwas entwickeln kannst?",
+      "text": "Nimm lieber einen Desktop-Rechner."
+    }
+  },
   "codeComments": {
     "letChanges": "let kann sich ändern, const nicht",
     "nameYourShop": "Gib deinem Laden einen Namen und eine Stadt",

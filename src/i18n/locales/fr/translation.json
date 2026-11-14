@@ -19,6 +19,17 @@
     "linkedin": "LinkedIn",
     "blog": "Blog"
   },
+  "screenNotice": {
+    "small": {
+      "title": "Hé, il te faudra peut-être un écran plus grand pour afficher tout le contenu",
+      "text": "Ce cours s'utilise mieux dans une fenêtre d'au moins 1280 pixels de large. Agrandis ta fenêtre, ou continue quand même.",
+      "continue": "Continuer quand même"
+    },
+    "mobile": {
+      "title": "Tu penses vraiment pouvoir développer quelque chose sur un téléphone ?",
+      "text": "Passe sur un ordinateur."
+    }
+  },
   "codeComments": {
     "letChanges": "let peut changer, const non",
     "nameYourShop": "Donne un nom et une ville à ta boutique",

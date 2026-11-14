@@ -19,6 +19,17 @@
     "linkedin": "LinkedIn",
     "blog": "Blog"
   },
+  "screenNotice": {
+    "small": {
+      "title": "Hey, you may need a bigger screen to display all the content",
+      "text": "This course works best in a window at least 1280 pixels wide. Widen your window, or continue anyway.",
+      "continue": "Continue anyway"
+    },
+    "mobile": {
+      "title": "Do you really think you can develop something on a mobile phone?",
+      "text": "Go for a desktop."
+    }
+  },
   "codeComments": {
     "letChanges": "let can change, const cannot",
     "nameYourShop": "Give your shop a name and a city",
